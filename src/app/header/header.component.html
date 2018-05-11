@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-dark indigo">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-lg-0">
+      <li class="nav-item active" >
+          <a class="nav-link" routerLink="acceuil" style="color:white;font-size:30px;font-family: 'Oswald', sans-serif;">Acceuil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="appareils" style="color:white;font-size:30px;font-family: 'Oswald', sans-serif" *ngIf="isAuth">Appareil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="edit" style="color:white;font-size:30px;font-family: 'Oswald', sans-serif;" *ngIf="isAuth">Edit</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="books" style="color:white;font-size:30px;font-family: 'Oswald', sans-serif;" *ngIf="isAuth">Book</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="users" style="color:white;font-size:30px;font-family: 'Oswald', sans-serif;" *ngIf="isAuth">Utilisateur</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="auth/signup" *ngIf="!isAuth" style="color:white;font-size:30px;font-family: 'Oswald', sans-serif;">Créer un compte</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="auth/signin" *ngIf="!isAuth" style="color:white;font-size:30px;font-family: 'Oswald', sans-serif;">Connexion</a>
+      </li>
+      <li>
+        <a class="nav-link" (click)="onSignOut()" *ngIf="isAuth" style="cursor:pointer; color:red;font-size:30px;font-family: 'Oswald', sans-serif;">Déconnexion</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- 
+
+<nav class="navbar navbar-default primary-color">
+  <div class="container-fluid">
+
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active">
+        <a routerLink="acceuil">Acceuil</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active">
+        <a routerLink="appareils">Appareil</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li routerLinkActive="active">
+        <a routerLink="edit">Edit</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li routerLinkActive="active">
+        <a routerLink="books">Book</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li routerLinkActive="active">
+        <a routerLink="users">Utilisateur</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active" *ngIf="!isAuth">
+        <a routerLink="auth/signup">Créer un compte</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active"  *ngIf="!isAuth">
+        <a routerLink="auth/signin">Connexion</a>
+      </li>
+      <li routerLinkActive="active">
+        <a (click)="onSignOut()"  *ngIf="isAuth" style="cursor:pointer">Déconnexion</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
